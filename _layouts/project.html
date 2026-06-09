@@ -1,0 +1,82 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{% include header.html %}
+
+<body data-theme="{{ site.mode }}" class="notransition">
+
+  <script>
+    const body = document.body;
+    const data = body.getAttribute("data-theme");
+
+    const initTheme = (state) => {
+      if (state === "dark") {
+        body.setAttribute("data-theme", "dark");
+      } else if (state === "light") {
+        body.removeAttribute("data-theme");
+      } else {
+        localStorage.setItem("theme", data);
+      }
+    };
+ 
+    initTheme(localStorage.getItem("theme"));
+    
+    setTimeout(() => body.classList.remove("notransition"), 75);
+  </script>
+
+  {% include navbar.html %}
+  <div class="wrapper">
+    <main class="page-content project-page" aria-label="Content">
+      <article class="project" itemscope itemtype="https://schema.org/ScholarlyArticle">
+
+        <!-- project Header -->
+        <header class="project-header">
+          <h1 class="project-title" itemprop="headline">{{ page.title }}</h1>
+          
+        </header>
+
+        <!-- Abstract Section -->
+        <section class="project-section">
+          <div class="abstract-content" itemprop="abstract">
+            {{ page.abstract }}
+          </div>
+        </section>
+
+        {% if page.links %}
+        <section class="project-links">
+          {% for link in page.links %}
+            {% assign link_name = link[0] %}
+            {% assign link_url = link[1] %}
+            <a href="{{ link_url }}"
+              class="project-link-button"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              <span class="link-text">{{ link_name }}</span>
+              <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+
+            </a>
+          {% endfor %}
+        </section>
+        {% endif %}
+
+
+        {% if content and content != "" %}
+        <section class="project-section project-content">
+          {{ content }}
+        </section>
+        {% endif %}
+
+      </article>
+    </main>
+
+    {% include footer.html %}
+  </div>
+
+</body>
+
+</html>

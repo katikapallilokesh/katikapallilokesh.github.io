@@ -3,10 +3,10 @@ layout: publication
 title: "PatientVLM Meets DocVLM: Pre-Consultation Dialogue Between Vision-Language Models for Efficient Diagnosis"
 authors:
   - name: "K Lokesh"
-    superscript: "1"
+    superscript: "1*"
     # link: "{{ site.homepage }}"
   - name: "Abhirama Subramanyam Penamakuri"
-    superscript: "1"
+    superscript: "1*"
     # link: "https://abhiram4572.github.io/"
   - name: "Uday Agarwal"
     superscript: "1"
@@ -27,6 +27,7 @@ authors:
 affiliations:
   - "Indian Institute of Technology Jodhpur"
   - "All India Institute of Medical Sciences Delhi"
+
 links:
   Page: "https://vl2g.github.io/projects/pcdf"
   ArXiV: "https://arxiv.org/abs/2601.10945"

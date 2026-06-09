@@ -1,6 +1,6 @@
 ---
 layout: publication
-title: "A CNN-LSTM-Based Hybrid Deep Learning Approach for Sentiment Analysis on Monkeypox Tweets"
+title: "A hybrid deep learning approach for detecting sentiment polarities and knowledge graph representation on monkeypox tweets"
 authors:
   - name: "Gaurav Meena"
     superscript: "1"

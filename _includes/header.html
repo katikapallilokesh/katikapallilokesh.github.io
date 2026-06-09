@@ -176,14 +176,17 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="/assets/external/fontawesome-free-6.6.0-web/css/all.min.css" />
 
-  <!-- for mathjax support -->
-  {% if page.usemathjax %}
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-      TeX: { equationNumbers: { autoNumber: "AMS" } }
-      });
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
-    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  {% endif %}
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['$`', '`$'], ['\\(', '\\)']],
+        displayMath: [['```math', '```'], ['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
     
 </head>
